@@ -33,12 +33,19 @@ const thankyou = document.querySelector(".thankyou");
 function show() {
   display.innerHTML = this.value;
 
-  setTimeout(
-    function () {
-      thankyou.innerHTML = `you press ${this.value}`;
-    },
+  // normal function
+  // var self = this;
+  // setTimeout(
+  //   function () {
+  //     thankyou.innerHTML = `you press ${self.value}`;
+  //   },
 
-    1000
-  );
+  //   1000
+  // );
+
+  ///Array function no need to declared again self
+  setInterval(() => {
+    thankyou.innerHTML = `you press ${this.value}`;
+  }, 100);
 }
 search.addEventListener("keyup", show);
